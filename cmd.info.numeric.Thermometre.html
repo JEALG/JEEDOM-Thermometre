@@ -1,25 +1,25 @@
 <div style="width:130px;min-height:80px;" class="cmd #history# tooltips cmd-widget" data-type="info" data-subtype="numeric" data-cmd_id="#id#" title="#collectDate#" data-eqLogic_id="#eqLogic_id#" data-eqLogic_id="#eqLogic_id#">
     <!-- Info Widget
         Basé sur les widget de 	:  ??
-        Mise à jour 			: JAG 20190604 : Ajout Possibilité d'afficher a gauche les max/min historique ou de l'équipement et marge
+        Mise à jour 			: JAG 20190606 : Correction Bug Safari + Publication Market
     -->
     <div class="row">
         <div class="title #hide_name#">
             <div class="cmdName"style="#hideCmdName#">#name_display#</div>
         </div>
     </div>
-  	<div class="value" style="font-size: 0.7em;text-align: right;margin-right:1px;position:relative;width:25px;height:80px;float: left;">
+  	<div class="value" style="font-size: 0.7em;text-align: right;margin-right:1px;position:relative;width:20%;height:80px;float: left;">
         <span class="#hide_history# HIST" style="position: relative;float: right;top: 2px;#displayHistory#">#maxHistoryValue#</span>
       	<span class="MINMAX" style="position: relative;float: right;top: 2px;">#maxValue#</span>
         <span class="#hide_history# HIST" style="position: relative;float: right;top: 38px;#displayHistory#">#minHistoryValue#</span>
       	<span class="MINMAX" style="position: relative;float: right;top: 38px;">#minValue#</span>
     </div>
-    <div style="position:relative;width:22px;height:95px;float: left;background:url('plugins/widget/core/template/dashboard/cmd.info.numeric.Thermometre/thermometre.png') no-repeat;background-size: 22px 90px;">
+    <div style="position:relative;width:30%;height:95px;float: left;background:url('plugins/widget/core/template/dashboard/cmd.info.numeric.Temperature_thermometre/thermometre.png') no-repeat;background-size: 22px 90px;">
         <div style="position: absolute;display:block;width: 4px;float:left;height: 68px;border: none;border-radius: 4px;background-color: white;left: 9.5px;top: 3px;">
             <div class="height#id#" style="display:block;position:absolute;bottom:0;width:100%;height: 0%;background-image: linear-gradient(to bottom, #fb0e0e, #1515b9);"></div>
         </div>
     </div>
-    <div style="display:inline-block;">
+    <div style="display:inline-block;width=70%">
         <div class="value">
             <span class="value#id# timeCmd label label-default value Stats#id#"></span>
             <!-- Historique -->
