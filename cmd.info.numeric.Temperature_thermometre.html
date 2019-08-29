@@ -9,10 +9,10 @@
         </div>
     </div>
   	<div class="value" style="font-size: 0.7em;text-align: right;margin-right:1px;position:relative;width:10%;height:80px;float: left;">
-        <span class="#hide_history# HIST" style="position: relative;float: right;top: 2px;#displayHistory#">#maxHistoryValue#</span>
-      	<span class="MINMAX" style="position: relative;float: right;top: 2px;">#maxValue#</span>
-        <span class="#hide_history# HIST" style="position: relative;float: right;top: 38px;#displayHistory#">#minHistoryValue#</span>
-      	<span class="MINMAX" style="position: relative;float: right;top: 38px;">#minValue#</span>
+        <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 2px;#displayHistory#">#maxHistoryValue#</span>
+      	<span class="MINMAX#id#" style="position: relative;float: right;top: 2px;">#maxValue#</span>
+        <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 38px;#displayHistory#">#minHistoryValue#</span>
+      	<span class="MINMAX#id#" style="position: relative;float: right;top: 38px;">#minValue#</span>
     </div>
     <div style="position:relative;width:16%;height:95px;float: left;background:url('plugins/widget/core/template/dashboard/cmd.info.numeric.Temperature_thermometre/thermometre.png') no-repeat;background-size: 22px 90px;">
         <div style="position: absolute;display:block;width: 4px;float:left;height: 68px;border: none;border-radius: 4px;background-color: white;left: 9.5px;top: 3px;">
@@ -46,11 +46,11 @@
                 $('.height#id#').css('height',height+'px');
             //masque des données
                 if (srcdivhidden =="X") {
-                    $("span.MINMAX").css("display","visible");
-                    $("span.HIST").css("display","none");
+                    $("span.MINMAX#id#").css("display","visible");
+                    $("span.HIST#id#").css("display","none");
                 }else{
-                    $("span.MINMAX").css("display","none");
-                    $("span.HIST").css("display","visible");
+                    $("span.MINMAX#id#").css("display","none");
+                    $("span.HIST#id#").css("display","visible");
                 }
         //Taille Texte et marge pour la valeur
             $('.cmd[data-cmd_id=#id#] .Stats#id#').css('font-size',srcFontSize);
