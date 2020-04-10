@@ -1,63 +1,63 @@
-<div style="min-width:130px;min-height:80px;margin-left:5px" class="cmd #history# tooltips cmd-widget" data-type="info" data-subtype="numeric" data-cmd_id="#id#" title="#collectDate#" data-eqLogic_id="#eqLogic_id#" data-eqLogic_id="#eqLogic_id#">
-    <!-- Info Widget
-        Basé sur les widget de 	:  ??
-        Mise à jour 			: JAG 20190918 : Migration uniquement pour core V4
-    -->
-    <div class="row">
-        <div class="title #hide_name#">
-            <div class="cmdName"style="#hideCmdName#">#name_display#</div>
-        </div>
-    </div>
-  	<div class="value" style="font-size: 0.7em;text-align: right;margin-right:1px;position:relative;width:10%;height:80px;float: left;">
-        <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 2px;#displayHistory#">#maxHistoryValue#</span>
-      	<span class="MINMAX#id#" style="position: relative;float: right;top: 2px;">#maxValue#</span>
-        <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 38px;#displayHistory#">#minHistoryValue#</span>
-      	<span class="MINMAX#id#" style="position: relative;float: right;top: 38px;">#minValue#</span>
-    </div>
-    <div style="position:relative;width:16%;height:95px;float: left;background:url('data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/temperature/te_thermometre.png') no-repeat;background-size: 22px 90px;">
-        <div style="position: absolute;display:block;width: 4px;float:left;height: 68px;border: none;border-radius: 4px;background-color: white;left: 9.5px;top: 3px;">
-            <div class="height#id#" style="display:block;position:absolute;bottom:0;width:100%;height: 0%;background-image: linear-gradient(to bottom, #fb0e0e, #1515b9);"></div>
-        </div>
-    </div>
-    <div style="display:inline-block;width=50%">
-        <div class="value">
-            <span class="value#id# timeCmd label label-default value Stats#id#"></span>
-            <!-- Historique -->
-            <div class="cmdStats #hide_history# Stats_hist#id#" style="#displayHistory# text-align: left;">
-                <span title="Min" style="float:left;">Min : #minHistoryValue# #unite#</span><br/>
-                <span title="Moy" style="float:left;">Moy : #averageHistoryValue# #unite#</span><br/>
-                <span title="Max" style="float:left;">Max : #maxHistoryValue# #unite#</span><br/>
-                <i class="#tendance#"></i> 
+    <div style="min-width:130px;min-height:80px;margin-left:5px" class="cmd #history# tooltips cmd-widget" data-type="info" data-subtype="numeric" data-cmd_id="#id#" title="#collectDate#" data-eqLogic_id="#eqLogic_id#" data-eqLogic_id="#eqLogic_id#">
+        <!-- Info Widget
+            Basé sur les widget de 	:  ??
+            Mise à jour 			: JAG 20190918 : Migration uniquement pour core V4
+        -->
+        <div class="row">
+            <div class="title #hide_name#">
+                <div class="cmdName"style="#hideCmdName#">#name_display#</div>
             </div>
         </div>
+        <div class="value" style="font-size: 0.7em;text-align: right;margin-right:1px;position:relative;width:10%;height:80px;float: left;">
+            <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 2px;#displayHistory#">#maxHistoryValue#</span>
+            <span class="MINMAX#id#" style="position: relative;float: right;top: 2px;">#maxValue#</span>
+            <span class="#hide_history# HIST#id#" style="position: relative;float: right;top: 38px;#displayHistory#">#minHistoryValue#</span>
+            <span class="MINMAX#id#" style="position: relative;float: right;top: 38px;">#minValue#</span>
+        </div>
+        <div style="position:relative;width:16%;height:95px;float: left;background:url('data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/temperature/te_thermometre.png') no-repeat;background-size: 22px 90px;">
+            <div style="position: absolute;display:block;width: 4px;float:left;height: 68px;border: none;border-radius: 4px;background-color: white;left: 9.5px;top: 3px;">
+                <div class="height#id#" style="display:block;position:absolute;bottom:0;width:100%;height: 0%;background-image: linear-gradient(to bottom, #fb0e0e, #1515b9);"></div>
+            </div>
+        </div>
+        <div style="display:inline-block;width=50%">
+            <div class="value">
+                <span class="value#id# timeCmd label label-default value Stats#id#"></span>
+                <!-- Historique -->
+                <div class="cmdStats #hide_history# Stats_hist#id#" style="#displayHistory# text-align: left;">
+                    <span title="Min" style="float:left;">Min : #minHistoryValue# #unite#</span><br/>
+                    <span title="Moy" style="float:left;">Moy : #averageHistoryValue# #unite#</span><br/>
+                    <span title="Max" style="float:left;">Max : #maxHistoryValue# #unite#</span><br/>
+                    <i class="#tendance#"></i> 
+                </div>
+            </div>
+        </div>
+        <script>
+            jeedom.cmd.update['#id#'] = function(_options){
+                // Variable masque pour div historique ou maxmin
+                    var srcdivhidden    = ('#min_max#'!='#'+'min_max#') ? "#min_max#": "X";
+                // Variable Taille Texte
+                    var srcFontSize     = ('#font_size#'!='#'+'font_size#') ? "#font_size#": "11px";
+                    var srcMargSize     = '#marge_size#';
+                    var srcFontSizeStat = ('#font_size_hist#'!='#'+'font_size_hist#') ? "#font_size_hist#": "10px";
+                //Update
+                    $('.cmd[data-cmd_id=#id#]').attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
+                    $('.cmd[data-cmd_id=#id#] .value#id#').empty().append(_options.display_value+' '+'#unite#'); 
+                    height = Math.round( (_options.display_value - ('#minValue#')) * (68/('#maxValue#' - ('#minValue#'))) ) + 6;
+                    $('.height#id#').css('height',height+'px');
+                //masque des données
+                    if (srcdivhidden =="X") {
+                        $("span.MINMAX#id#").css("display","visible");
+                        $("span.HIST#id#").css("display","none");
+                    }else{
+                        $("span.MINMAX#id#").css("display","none");
+                        $("span.HIST#id#").css("display","visible");
+                    }
+            //Taille Texte et marge pour la valeur
+                $('.cmd[data-cmd_id=#id#] .Stats#id#').css('font-size',srcFontSize);
+                $('.cmd[data-cmd_id=#id#] .Stats#id#').css('line-height',srcMargSize);
+            //Taille Texte pour l'historique
+                $('.cmd[data-cmd_id=#id#] .Stats_hist#id#').css('font-size',srcFontSizeStat);
+            }
+            jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
+        </script>
     </div>
-    <script>
-        jeedom.cmd.update['#id#'] = function(_options){
-            // Variable masque pour div historique ou maxmin
-                var srcdivhidden    = ('#min_max#'!='#'+'min_max#') ? "#min_max#": "X";
-            // Variable Taille Texte
-                var srcFontSize     = ('#font_size#'!='#'+'font_size#') ? "#font_size#": "11px";
-                var srcMargSize     = '#marge_size#';
-                var srcFontSizeStat = ('#font_size_hist#'!='#'+'font_size_hist#') ? "#font_size_hist#": "10px";
-            //Update
-                $('.cmd[data-cmd_id=#id#]').attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
-                $('.cmd[data-cmd_id=#id#] .value#id#').empty().append(_options.display_value+' '+'#unite#'); 
-                height = Math.round( (_options.display_value - ('#minValue#')) * (68/('#maxValue#' - ('#minValue#'))) ) + 6;
-                $('.height#id#').css('height',height+'px');
-            //masque des données
-                if (srcdivhidden =="X") {
-                    $("span.MINMAX#id#").css("display","visible");
-                    $("span.HIST#id#").css("display","none");
-                }else{
-                    $("span.MINMAX#id#").css("display","none");
-                    $("span.HIST#id#").css("display","visible");
-                }
-        //Taille Texte et marge pour la valeur
-            $('.cmd[data-cmd_id=#id#] .Stats#id#').css('font-size',srcFontSize);
-            $('.cmd[data-cmd_id=#id#] .Stats#id#').css('line-height',srcMargSize);
-        //Taille Texte pour l'historique
-            $('.cmd[data-cmd_id=#id#] .Stats_hist#id#').css('font-size',srcFontSizeStat);
-        }
-        jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
-    </script>
-</div>
