@@ -4,7 +4,7 @@
     <!-- Info Widget
         Widget de           : JAG
         Widget pour le Core : V4
-        Mise à jour         : JAG 20201220 => Update suite changement localisation image
+        Mise à jour         : JAG 20220109 => Changement affichage valeur
 	-->
     <div class="row">
         <div class="title #hide_name#">
@@ -31,12 +31,12 @@
     </div>
     <div style="display:inline-block;width=50%">
         <div class="value">
-            <span class="value#id# timeCmd label label-default value Stats#id#"></span>
+            <span class="value#id# timeCmd value Stats#id#"></span>
             <!-- Historique -->
             <div class="cmdStats #hide_history# Stats_hist#id#" style="#displayHistory# text-align: left;">
-                <span title="Min" style="float:left;">Min : #minHistoryValue# #unite#</span><br />
-                <span title="Moy" style="float:left;">Moy : #averageHistoryValue# #unite#</span><br />
-                <span title="Max" style="float:left;">Max : #maxHistoryValue# #unite#</span><br />
+                <span class="tooltips tooltipstered" title="Min" style="float:left;">Min : #minHistoryValue# #unite#</span><br />
+                <span class="tooltips tooltipstered" title="Moy" style="float:left;">Moy : #averageHistoryValue# #unite#</span><br />
+                <span class="tooltips tooltipstered" title="Max" style="float:left;">Max : #maxHistoryValue# #unite#</span><br />
                 <i class="#tendance#"></i>
             </div>
         </div>
